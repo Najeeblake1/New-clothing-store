@@ -1,9 +1,17 @@
 const express = require('express');
 const app = express();
-const {resolve} = require('path');
+// const {resolve} = require('path');
+const port = 4242;
 // Replace if using a different env file or config
 const env = require('dotenv').config({path: './.env'});
 
+app.set("view engine", "ejs")
+app.get("/", function(req, res){
+  res.render("index")
+})
+
+
+console.log("H")
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
   apiVersion: '2020-08-27',
   appInfo: { // For sample support and debugging, not required for production:
@@ -104,6 +112,6 @@ app.post('/webhook', async (req, res) => {
   res.sendStatus(200);
 });
 
-app.listen(4242, () =>
-  console.log(`Node server listening at http://localhost:4242`)
-);
+app.listen(4242, function(){
+  console.log("server is live at port: " + port)
+})
