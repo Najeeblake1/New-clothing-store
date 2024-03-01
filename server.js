@@ -4,6 +4,16 @@ const app = express();
 const port = 4242;
 // Replace if using a different env file or config
 const env = require('dotenv').config({path: './.env'});
+//const stripe = require('stripe')('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');
+const endpointSecret = 'whsec_...';
+const express = require('express');
+
+
+app.post('/webhook', express.raw{type: 'application/json'}), (request, response) =>{
+  let event = request.body;
+ if (endpointsecret){
+  }
+})
 
 app.set("view engine", "ejs")
 app.get("/", function(req, res){
@@ -115,3 +125,5 @@ app.post('/webhook', async (req, res) => {
 app.listen(4242, function(){
   console.log("server is live at port: " + port)
 })
+
+
