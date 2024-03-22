@@ -104,6 +104,7 @@ a{
     padding: 3%;
     cursor: pointer;
   }
+
   
   /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
   #main {
@@ -117,4 +118,13 @@ a{
     .sidenav a {font-size: 18px;}
   }
 
-  
+  .audiobutton{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px; /* Adjust margin as needed */
+    background-color: rgb(0, 128, 255); /* Background color */
+    padding: 10px; /* Padding around the content */
+    border: 1px solid #ccc; /* Border for the element */
+    border-radius: 5px; /* Rounded corners */
+  }
