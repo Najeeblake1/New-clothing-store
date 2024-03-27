@@ -31,20 +31,20 @@ app.use(express.static(__dirname + "/public"))
 //     return;
 //   }
 
-//   // Handle specific webhook events
-//   switch (event.type) {
-//     case 'payment_intent.succeeded':
-//       console.log('PaymentIntent was successful!');
-//       break;
-//     case 'payment_method.attached':
-//       console.log('PaymentMethod was attached to a Customer!');
-//       break;
-//     // Handle other event types
-//     default:
-//       console.log(`Unhandled event type ${event.type}`);
-//   }
+  // Handle specific webhook events
+  // switch (event.type) {
+  //   case 'payment_intent.succeeded':
+  //     console.log('PaymentIntent was successful!');
+  //     break;
+  //   case 'payment_method.attached':
+  //     console.log('PaymentMethod was attached to a Customer!');
+  //     break;
+  //   // Handle other event types
+  //   default:
+  //     console.log(`Unhandled event type ${event.type}`);
+  // }
 
-//   // Return a response to acknowledge receipt of the event
+  // Return a response to acknowledge receipt of the event
 //   response.send();
 // });
 
@@ -53,14 +53,15 @@ app.get("/", function(req, res){
   res.render("index");
 });
 
-// app.get('data/id',(req,res)=>{
-//   const id = req.params.id;
-//   const prod= {};
-//   res.send(id);
-//   const product =
-//   products.find((item)=>item.id==id)
-//   res.json(product)
-// })
+app.get('data/id',(req,res)=>{
+  const id = req.params.id;
+  const prod= {};
+  res.send(id);
+  const product =
+  products.find((item)=>item.id==id)
+  
+  res.json(product)
+})
 
 // ! maybe redundant code
 app.get("/sendimage/:src",function(req, res){
