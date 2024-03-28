@@ -60,21 +60,7 @@
 
       </div>
     </div>
-  </div>
-
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">SWEATERS</a>
-    <a href="#">HOODIES</a>
-    <a href="#">T-SHIRTS</a>
-    <a href="#">PANTS</a>
-    <a href="#">HATS</a>
-  </div>
   
-  <!-- Use any element to open the sidenav -->
-  <span class="openbutton" onclick="openNav()">CLICK ME TO OPEN &#8594;</span>
-
-  </div>
 
   <div class="front"></div>
 
@@ -83,24 +69,83 @@
 <!-- <div class="categories">
   <div class="row">
     <div class="col-3">
-      <img src="\pictures\PHOTO-2024-03-25-08-07-52.jpg">
+      <img src="/pictures/PHOTO-2024-03-25-08-07-52.jpg">
     </div>
     <div class="col-3">
-      <img src="\pictures\PHOTO-2024-03-25-08-17-08.jpg">
+      <img src="/pictures/PHOTO-2024-03-25-08-17-08.jpg">
     </div>
     <div class="col-3">
-      <img src="\pictures\IMG_1600.jpg">
+      <img src="/pictures/IMG_1600.jpg">
     </div> -->
     
   <!-- </div> -->
 <!-- </div> -->
 
 
+<h1>Products</h1>
+    <div class="products">
+      <div class="sweaterdisplay">
+        <h1>sweater</h1>
+        <div id="sweater">
+        <% products.forEach(product => { %>
+          <%console.log(product)%>
+          <%if(product.type === "sweater" ){%>
+          <div class="product">
+           <h2><%=product.title%></h2>
+           <p>Price: $<%= product.price.toFixed(2) %></p>
+           <p>Stock: <%=product.stock%></p>
+           <img src="<%= product.picurl %>" alt="<%= product.title %>">
+           
+           <!-- Other product details -->
+           </div>
+         <%}%>
+         <% }); %>
+        </div>
 
+      </div>
+      <div class="hatdisplay">
+        <h1>Hat</h1>
+        <div class="hat">
+        <% products.forEach(product => { %>
+          <%console.log(product)%>
+          <%if(product.type === "hat" ){%>
+          <div class="product">
+           <h2><%=product.title%></h2>
+           <p>Price: $<%= product.price.toFixed(2) %></p>
+           <p>Stock: <%=product.stock%></p>
+           <img src="<%= product.picurl %>" alt="<%= product.title %>">
+           
+           <!-- Other product details -->
+           </div>
+          </div>
+         <%}%>
+         <% }); %>
+
+      </div>
+      <div class="pantsdisplay">
+        <h1>pants</h1>
+        <div class="pants">
+        <% products.forEach(product => { %>
+          <%console.log(product)%>
+          <%if(product.type === "pants" ){%>
+          <div class="product">
+           <h2><%=product.title%></h2>
+           <p>Price: $<%= product.price.toFixed(2) %></p>
+           <p>Stock: <%=product.stock%></p>
+           <img src="<%= product.picurl %>" alt="<%= product.title %>">
+           
+           <!-- Other product details -->
+           </div>
+          </div>
+         <%}%>
+         <% }); %>
+
+      </div>
+    </div>
 
 
 
   
-  <script src="/JS/freshpage.js"></script>
+<script src="./frontpage.js"></script>
 </body>
 </html>

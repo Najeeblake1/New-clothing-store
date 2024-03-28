@@ -80,6 +80,25 @@ const products = [
         type: pants
        
     },
+    {
+        id: 10,
+        title: "Black Hat",
+        price: 25.00,
+        stock: 20,
+        picurl: "\public\pictures\black hat.png",
+        type: hat
+       
+    },
+    {
+        id: 11,
+        title: "Orange Hat",
+        price: 25.00,
+        stock: 20,
+        picurl: "\public\pictures\orangehat.png",
+        type: hat
+       
+    },
 ];
 
 module.exports=products;
+// export default products;

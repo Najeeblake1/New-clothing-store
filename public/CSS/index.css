@@ -18,7 +18,7 @@ text-align: center;
 .title{
   font-size: 25px ;
   text-align: center;
-  padding-left: 350px;
+  padding-left: 200px;
   position: relative;
 }
 
@@ -125,6 +125,7 @@ a{
 
   .audiobutton{
     position: fixed;
+    overlay: none;
     bottom: 0;
     right: 0;
     margin: 20px; /* Adjust margin as needed */
@@ -168,3 +169,24 @@ margin-bottom: 50px;
   width: 100%;
   display: inline-flex;
 }
+
+
+.displaybox{
+  background-color: rgb(132, 181, 245);
+  width: 800px;
+  height: 400px;
+  margin: 10% auto;
+  border: solid;
+  border-width: 1.5px;
+  border-color: black;
+  overflow: hidden;
+  overflow-y: scroll;
+  align-items: center;
+}
+
+/* .scroll-div{
+  width: 800px;
+  height: 400px;
+  /* overflow: hidden;
+  overflow-y: scroll; */
+/* } */ 

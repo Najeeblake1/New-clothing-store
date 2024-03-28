@@ -1,3 +1,106 @@
+const products = [
+  {
+      id: 1,
+      title: "Black Hoodie",
+      price: 100.00,
+      stock: 20,
+      picurl: "/pictures/blackhoodie.png",
+      type:"sweater"
+      
+  },
+  {
+      id: 2,
+      title: "Blue Hoodie",
+      price: 100.00,
+      stock: 20,
+      picurl: "/pictures/bluehoodie.png",
+      type:"sweater"
+     
+  },
+  {
+      id: 3,
+      title: "Yellow Hoodie",
+      price: 100.00,
+      stock: 20,
+      picurl: "/pictures/yellowhoodie.png",
+      type:"sweater"
+     
+  },
+  {
+      id: 4,
+      title: "Orange Hoodie",
+      price: 100.00,
+      stock: 20,
+      picurl: "/pictures/orangehoodie.png",
+      type:"sweater"
+     
+  },
+  {
+      id: 5,
+      title: "Yellow Sweatpants",
+      price: 60.00,
+      stock: 20,
+      picurl: "/pictures/yellowsweatpants.png",
+      type:"pants"
+     
+  },
+  {
+      id: 6,
+      title: "Orange Sweatpants",
+      price: 60.00,
+      stock: 20,
+      picurl: "/pictures/orangesweatpants.png",
+      type:"pants"
+     
+  },
+  {
+      id: 7,
+      title: "Green Sweatpants",
+      price: 60.00,
+      stock: 20,
+      picurl: "/pictures/greensweatpants.png",
+      type:"pants"
+     
+  },
+  {
+      id: 8,
+      title: "Blue Sweatpants",
+      price: 60.00,
+      stock: 20,
+      picurl: "/pictures/bluesweatpants.png",
+      type:"pants"
+     
+  },
+  {
+      id: 9,
+      title: "Black Sweatpants",
+      price: 60.00,
+      stock: 20,
+      picurl: "/pictures/blacksweatpants.png",
+      type:"pants"
+     
+  },
+  {
+      id: 10,
+      title: "Black Hat",
+      price: 25.00,
+      stock: 20,
+      picurl: "/pictures/black hat.png",
+      type:"hat"
+     
+  },
+  {
+      id: 11,
+      title: "Orange Hat",
+      price: 25.00,
+      stock: 20,
+      picurl: "/pictures/orangehat.png",
+      type:"hat"
+     
+  },
+];
+
+
 const express = require('express');
 // const bodyParser = require('body-parser');
 // const stripe = require('stripe')(process.env.whsec_hSuAPtfJp9BVlYsa94kVLPQuG1QFWeMP, {
@@ -12,7 +115,7 @@ const express = require('express');
 // const endpointSecret = 'whsec_hSuAPtfJp9BVlYsa94kVLPQuG1QFWeMP';
 const app = express();
 const port = 4242;
-
+// const products= require ("./public/JS/data.js")
 // Set the default view engine to EJS and specify the file extension
 app.set("view engine", "ejs");
 app.set("view options", { extension: "ejs" }); // Optional: Specify the file extension
@@ -50,7 +153,7 @@ app.use(express.static(__dirname + "/public"))
 
 // Serve index page
 app.get("/", function(req, res){
-  res.render("index");
+  res.render("index",{products:products});
 });
 
 app.get('data/id',(req,res)=>{
@@ -68,5 +171,10 @@ app.get("/sendimage/:src",function(req, res){
   res.sendFile(__dirname + `/pictures/${req.params.src}`)
 })
 
+app.get('/products', (req, res) => {
+  res.render('products', { products }); // Pass the products array to the template
+});
+
 // Start the server
 app.listen(port, () => console.log(`Server is running on port ${port}`));
+
